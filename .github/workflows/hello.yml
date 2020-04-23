@@ -1,10 +1,13 @@
-name: Hello World
+name: hello
 on: [push]
 
 jobs:
   build:
     name: hello
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        name: [world, github]
     steps:
       - name: echo
-        run: echo 'Hello World'
+        run: echo 'hello ${{ matrix.name }}'
