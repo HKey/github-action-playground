@@ -20,4 +20,5 @@ jobs:
       - name: test-sandbox
         run: |
           emacs --version
+          make init
           make test-sandbox
