@@ -1,0 +1,23 @@
+name: emacs-test
+on: [push]
+
+jobs:
+  build:
+    name: emacs-test
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        emacs_version:
+          - 24.5
+          - 25.3
+          - 26.3
+          - snapshot
+    steps:
+      - uses: purcell/setup-emacs@v1.0
+        with:
+          version: ${{ matrix.emacs_version }}
+      - uses: actions/checkout@v2
+      - name: test
+        run: |
+          emacs --version
+          make test

@@ -3,4 +3,4 @@ MAKEM = ./makem.sh/makem.sh
 
 .PHONY: test-sandbox
 test-sandbox:
-	$(MAKEM) all --sandbox --install-deps --install-linters --emacs $(EMACS) --verbose
+	$(MAKEM) all --sandbox --install-deps --install-linters --emacs $(EMACS) -vv
